@@ -36,7 +36,7 @@ namespace exoDelegate
 					func = null;
 					break;
 			}
-			Console.WriteLine(func is not null ? $"{a} {op} {b} = {func.Invoke(a, b)}" : "Invalid operator");
+			Console.WriteLine(func is not null ? $"{a} {op} {b} = {func(a, b)}" : "Invalid operator");
 		}
 	}
 }
