@@ -1,6 +1,10 @@
-﻿@{
+﻿@model TestApp.Models.UserModel
+@{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<h1>Hello @Model.Name</h1>
+<p>This is your e-mail: @Model.Email</p>
+<b>You have been assigned the Id : @Model.Id</b>

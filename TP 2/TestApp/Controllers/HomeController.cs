@@ -20,7 +20,13 @@ namespace TestApp.Controllers
 
 		public IActionResult Privacy(int id)
 		{
-			return View();
+			UserModel u = new UserModel
+			{
+				Id = id,
+				Name = "Mohamed Aziz Bellaaj",
+				Email = "azizbellaaj9@yahoo.fr"
+			};
+			return View(u);
 		}
 		public IActionResult About()
 		{
