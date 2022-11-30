@@ -16,7 +16,7 @@ namespace WebApplicationTP3.Controllers
 
 		public IActionResult Index()
 		{
-			SQLiteConnection dbcon = new SQLiteConnection("Data Source=.\\2022 GL3 .NET Framework TP3 - SQLite database.db;DateTimeKind=Utc;");
+			SQLiteConnection dbcon = new SQLiteConnection("Data Source=.\\2022 GL3 .NET Framework TP3 - SQLite database.db;");
 			using (dbcon)
 			{
 				dbcon.Open();
