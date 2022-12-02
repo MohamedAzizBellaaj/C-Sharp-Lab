@@ -51,7 +51,7 @@ namespace WebApplicationTP3.Controllers
 			//{
 			//	Console.WriteLine(p);
 			//}
-			//return View();
+			return View();
 		}
 		public IActionResult Privacy()
 		{
