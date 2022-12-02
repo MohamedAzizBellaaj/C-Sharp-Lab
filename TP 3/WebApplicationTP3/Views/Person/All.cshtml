@@ -1,0 +1,31 @@
+﻿
+<div class="container">
+	@{
+		foreach(Person p in ViewBag.Message)
+		{
+		<div class="row">
+			<div class="col-sm">
+				@p.id
+			</div>
+			<div class="col-sm">
+				@p.first_name
+			</div>
+			<div class="col-sm">
+				@p.last_name
+			</div>
+			<div class=" col-sm">
+				@p.email
+			</div>
+			<div class=" col-sm">
+					<img src="@p.image" class="img-responsive" alt="@p.first_name @p.last_name image">
+			</div>
+			<div class=" col-sm">
+				@p.country
+			</div>
+			<div class=" col-sm">
+				@p.date_birth
+			</div>
+		</div>
+		}
+}
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+	if (ViewBag.Message is null)
+	{
+		<h1>There is no person with that id.</h1>
+	}
+	else
+	{
+		<div class="row">
+			<div class="col-sm">
+				@ViewBag.Message.id
+			</div>
+			<div class="col-sm">
+				@ViewBag.Message.first_name
+			</div>
+			<div class="col-sm">
+				@ViewBag.Message.last_name
+			</div>
+			<div class=" col-sm">
+				@ViewBag.Message.email
+			</div>
+			<div class=" col-sm">
+				<img src="@ViewBag.Message.image" class="img-responsive"
+				alt="@ViewBag.Message.first_name @ViewBag.Message.last_name image">
+			</div>
+			<div class=" col-sm">
+				@ViewBag.Message.country
+			</div>
+			<div class=" col-sm">
+				@ViewBag.Message.date_birth
+			</div>
+		</div>
+	}
+}
