@@ -28,8 +28,8 @@ namespace WebApplicationTP3.Models
 						Person person = new Person(id, first_name, last_name, email, image, country);
 						personList.Add(person);
 					}
+					return personList;
 				}
-				return personList;
 			}
 		}
 		public static Person? GetPerson(int id, SQLiteConnection dbcon)
@@ -57,6 +57,32 @@ namespace WebApplicationTP3.Models
 			}
 			return null;
 		}
-
+		public static void Add(Person person, SQLiteConnection dbcon)
+		{
+			using (dbcon)
+			{
+				dbcon.Open();
+				SQLiteCommand cmd = new SQLiteCommand("INSERT INTO personal_info VALUES (@id, @first_name, @last_name, @email, @date_birth, @image, @country)", dbcon);
+				cmd.Parameters.Add(new SQLiteParameter("@id", person.id));
+				cmd.Parameters.Add(new SQLiteParameter("@first_name", person.first_name));
+				cmd.Parameters.Add(new SQLiteParameter("@last_name", person.last_name));
+				cmd.Parameters.Add(new SQLiteParameter("@email", person.email));
+				cmd.Parameters.Add(new SQLiteParameter("@date_birth", person.date_birth));
+				cmd.Parameters.Add(new SQLiteParameter("@image", person.image));
+				cmd.Parameters.Add(new SQLiteParameter("@country", person.country));
+				cmd.ExecuteNonQuery();
+			}
+		}
+		public static int Search(string first_name, string country, SQLiteConnection dbcon)
+		{
+			using (dbcon)
+			{
+				dbcon.Open();
+				SQLiteCommand cmd = new SQLiteCommand("SELECT id FROM personal_info WHERE first_name = @first_name AND country = @country",dbcon);
+				cmd.Parameters.Add(new SQLiteParameter("@first_name", first_name));
+				cmd.Parameters.Add(new SQLiteParameter("@country",country));
+				return (int)cmd.ExecuteScalar();
+			}
+		}
 	}
 }

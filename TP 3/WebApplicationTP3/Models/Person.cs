@@ -2,13 +2,14 @@
 {
 	public class Person
 	{
-		public int id { get; set; }
-		public string first_name { get; set; }
-		public string last_name { get; set; }
-		public string email { get; set; }
-		public string image { get; set; }
-		public string country { get; set; }
+		public int? id { get; set; }
+		public string? first_name { get; set; }
+		public string? last_name { get; set; }
+		public string? email { get; set; }
+		public string? image { get; set; }
+		public string? country { get; set; }
 		public DateTime date_birth { get; set; } = new DateTime(2001, 1, 1, 0, 0, 0);
+		public Person() { }
 		public Person(int id, string first_name, string last_name, string email, string image, string country)
 		{
 			this.id = id;

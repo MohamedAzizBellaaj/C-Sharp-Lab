@@ -1,4 +1,14 @@
-﻿
-@{
-
+﻿@model WebApplicationTP3.Models.Person
+@using (Html.BeginForm("Search", "Person", FormMethod.Post))
+{
+	<div>
+		First Name :
+		@Html.TextBoxFor(p => p.first_name)
+	</div>
+	<div>
+		Country
+		@Html.TextBoxFor(p => p.country)
+	</div>
+	<input type="submit" value="Search">
 }
+

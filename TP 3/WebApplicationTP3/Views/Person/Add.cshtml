@@ -1,0 +1,30 @@
+﻿@model WebApplicationTP3.Models.Person
+@using (Html.BeginForm("Add", "Person", FormMethod.Post))
+{
+	<div>
+		ID :
+		@Html.TextBoxFor(p => p.id)
+	</div>
+	<div>
+		First Name :
+		@Html.TextBoxFor(p => p.first_name)
+	</div>
+	<div>
+		Last Name :
+		@Html.TextBoxFor(p => p.last_name)
+	</div>
+	<div>
+		Email :
+		@Html.TextBoxFor(p => p.email)
+	</div>
+	<div>
+		Image :
+		@Html.TextBoxFor(p => p.image)
+	</div>
+	<div>
+		Country
+		@Html.TextBoxFor(p => p.country)
+	</div>
+	<input type="submit" value="Add Person">
+}
+
