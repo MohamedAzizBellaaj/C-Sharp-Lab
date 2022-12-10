@@ -18,6 +18,10 @@ namespace WebApplicationTP_4.Controllers
 		{
 			UniversityContext u = UniversityContext.getInstance();
 			List<Student> s = u.Student.ToList<Student>();
+			foreach (Student student in s)
+			{
+				Console.WriteLine(student);
+			}
 			return View();
 		}
 
