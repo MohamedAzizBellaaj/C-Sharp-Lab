@@ -16,7 +16,7 @@ namespace WebApplicationTP_4.Controllers
 
 		public IActionResult Index()
 		{
-			UniversityContext u = UniversityContext.getInstance();
+			UniversityContext u = UniversityContext.Instance;
 			List<Student> s = u.Student.ToList<Student>();
 			foreach (Student student in s)
 			{
@@ -27,7 +27,7 @@ namespace WebApplicationTP_4.Controllers
 
 		public IActionResult Privacy()
 		{
-			UniversityContext u = UniversityContext.getInstance();
+			UniversityContext u = UniversityContext.Instance;
 			return View();
 		}
 
