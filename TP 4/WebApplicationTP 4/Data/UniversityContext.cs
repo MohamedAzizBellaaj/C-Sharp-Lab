@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 using WebApplicationTP_4.Models;
 
 namespace WebApplicationTP_4.Data
@@ -24,7 +23,7 @@ namespace WebApplicationTP_4.Data
 		private static UniversityContext Instantiate_UniversityContext()
 		{
 			//? Singleton's test message
-			Debug.WriteLine("This is run.");
+			Console.WriteLine("This is run only once!");
 			var optionsBuilder = new DbContextOptionsBuilder<UniversityContext>();
 			optionsBuilder.UseSqlite("Data Source=.\\2022 GL3 .NET Framework TP4 - SQLite database.db;");
 			return new UniversityContext(optionsBuilder.Options);

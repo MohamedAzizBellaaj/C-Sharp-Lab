@@ -19,11 +19,11 @@ namespace WebApplicationTP_4.Controllers
 			//? Listing students
 			UniversityContext u = UniversityContext.Instance;
 			List<Student> s = u.Student.ToList();
-			foreach (Student student in s)
-			{
-				Console.WriteLine(student);
-			}
-			return View();
+			//foreach (Student student in s)
+			//{
+			//	Console.WriteLine(student);
+			//}
+			return View(s);
 		}
 		[Route("Home/Courses")]
 		public IActionResult Courses()
