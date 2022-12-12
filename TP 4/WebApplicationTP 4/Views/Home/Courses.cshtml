@@ -1,0 +1,16 @@
+﻿@{
+	ViewData["Title"] = "Courses";
+}
+@model List<string>
+<h1>@ViewData["Title"]</h1>
+<div class="card" style="width: 18rem;">
+	<ul class="list-group list-group-flush">
+		@foreach (string course in Model)
+		{
+			Dictionary<string,string> data = new Dictionary<string, string> { { "course", course } };
+			<li class="list-group-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home"
+				asp-action="Search" asp-all-route-data="data">@course</a>
+			</li>
+		}
+	</ul>
+</div>

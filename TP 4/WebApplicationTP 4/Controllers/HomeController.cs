@@ -16,6 +16,7 @@ namespace WebApplicationTP_4.Controllers
 
 		public IActionResult Index()
 		{
+			//? Listing students
 			UniversityContext u = UniversityContext.Instance;
 			List<Student> s = u.Student.ToList();
 			foreach (Student student in s)
@@ -24,11 +25,19 @@ namespace WebApplicationTP_4.Controllers
 			}
 			return View();
 		}
-
-		public IActionResult Privacy()
+		[Route("Home/Courses")]
+		public IActionResult Courses()
 		{
+			//? Singleton's test
 			UniversityContext u = UniversityContext.Instance;
-			return View();
+			StudentRepository studentRepository = new StudentRepository(UniversityContext.Instance);
+			return View(studentRepository.GetUniqueCourses().ToList());
+		}
+		[Route("Home/Search/{Course?}")]
+		public IActionResult Search(string course)
+		{
+			StudentRepository studentRepository = new StudentRepository(UniversityContext.Instance);
+			return View(studentRepository.GetStudentsByCourse(course).ToList());
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
