@@ -17,7 +17,7 @@ namespace WebApplicationTP_4.Controllers
 		public IActionResult Index()
 		{
 			UniversityContext u = UniversityContext.Instance;
-			List<Student> s = u.Student.ToList<Student>();
+			List<Student> s = u.Student.ToList();
 			foreach (Student student in s)
 			{
 				Console.WriteLine(student);
